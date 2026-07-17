@@ -1,0 +1,110 @@
+<div class="patient-container">
+
+  <div class="header">
+    <h1>👥 Patient Records</h1>
+
+    <button class="add-btn" (click)="showForm = true">
+      +Add patient
+    </button>
+  </div>
+<div class="search-box">
+  <input
+    type="text"
+    placeholder="Search Patient by ID or Name"
+    [(ngModel)]="searchText">
+
+  <button >
+    🔍 Search
+  </button>
+</div>
+  
+  <div class="patient-form" *ngIf="showForm">
+
+  <h2>Add New Patient</h2>
+
+  <input
+    type="text"
+    placeholder="Patient ID"
+    [(ngModel)]="patient.id">
+
+  <input
+    type="text"
+    placeholder="Patient Name"
+    [(ngModel)]="patient.name">
+
+  <input
+    type="number"
+    placeholder="Age"
+    [(ngModel)]="patient.age">
+
+  <select [(ngModel)]="patient.gender">
+    <option value="">Select Gender</option>
+    <option>Male</option>
+    <option>Female</option>
+    <option>Other</option>
+  </select>
+
+  <input
+    type="text"
+    placeholder="Disease"
+    [(ngModel)]="patient.disease">
+
+  <select [(ngModel)]="patient.bloodGroup">
+    <option value="">Select Blood Group</option>
+    <option>A+</option>
+    <option>A-</option>
+    <option>B+</option>
+    <option>B-</option>
+    <option>AB+</option>
+    <option>AB-</option>
+    <option>O+</option>
+    <option>O-</option>
+  </select>
+
+  <input
+    type="text"
+    placeholder="Phone Number"
+    [(ngModel)]="patient.phone">
+
+  <button class="add-btn" (click)="savePatient()">
+    {{ editMode ? 'Update Patient' : 'Save Patient' }}
+  </button>
+
+</div>
+
+  <table>
+
+    <thead>
+      <tr>
+        <th>Patient ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Disease</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+  <tr *ngFor="let p of filteredPatients; let i = index">
+    <td>{{ p.id }}</td>
+    <td>{{ p.name }}</td>
+    <td>{{ p.age }}</td>
+    <td>{{ p.disease }}</td>
+
+    <td>
+      <button class="view-btn" (click)="viewPatient(i)">View</button>
+      <button class="edit-btn" (click)="editPatient(i)">Edit</button>
+      <button class="delete-btn" (click)="deletepatient(i)">Delete</button>
+    </td>
+  </tr>
+</tbody>
+
+  </table>
+
+  <br>
+
+  <button class="back-btn" routerLink="/dashboard">
+    ⬅ Back to Dashboard
+  </button>
+
+</div>c

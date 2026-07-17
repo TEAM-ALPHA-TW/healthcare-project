@@ -1,0 +1,58 @@
+<div class="container">
+
+    <h1>Clinical Trail Matcher</h1>
+
+    <div class="search-box">
+
+        <label>Disease</label><br>
+
+        <input type="text" placeholder="Enter Disease" [(ngModel)]="searchDisease">
+        <br><br>
+
+        <label>Age</label><br>
+        <input type="number" placeholder="Enter Age"
+        [(ngModel)]="searchAge">
+
+        <br><br>
+
+        <button (click)="searchTrials()">Search Trials</button>
+
+    </div>
+
+    <table>
+
+        <tr>
+            <th>Trial ID</th>
+            <th>Trial Name</th>
+            <th>Disease</th>
+            <th>Location</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+
+      <tr *ngFor="let trial of filteredTrials">
+
+  <td>{{ trial.id }}</td>
+  <td>{{ trial.title }}</td>
+  <td>{{ trial.disease }}</td>
+  <td>{{ trial.location }}</td>
+  <td>{{ trial.status }}</td>
+   <td>
+    <button (click)="matchTrial(trial)">
+      Match
+    </button>
+  </td>
+
+
+
+</tr>
+
+    </table>
+
+    <br>
+
+    <button routerLink="/dashboard">
+        Back to Dashboard
+    </button>
+
+</div>

@@ -1,0 +1,124 @@
+<div class="layout">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+
+    <h2>🏥 MedCare</h2>
+
+    <a routerLink="/dashboard">🏠 Dashboard</a>
+
+    <a routerLink="/patient-records">👥 Patient Records</a>
+
+    <a routerLink="/clinical-trail">🧪 Clinical Trial Matcher</a>
+
+    <a routerLink="/patient-eligibility">📄 Patient Eligibility</a>
+
+    <a (click)="logout()">🚪 Logout</a>
+
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+
+      <h3>🏥 MedCare Hospital</h3>
+
+      <p>{{ today | date:'dd/MM/yyyy' }}</p>
+
+    </div>
+
+    <!-- Title -->
+    <h1>Intelligent EMR & Clinical Trial Matcher</h1>
+
+    <!-- Doctor Profile -->
+    <div class="doctor-card">
+
+      <div class="doctor-img">
+        👨‍⚕️
+      </div>
+
+      <div class="doctor-details">
+
+        <h2>Welcome Dr. {{ doctorName }}</h2>
+
+        <p>📧 {{ doctorEmail }}</p>
+
+        <p>🩺 Cardiologist</p>
+
+        <p class="online-status">🟢 Online</p>
+
+      </div>
+
+    </div>
+
+    <!-- Statistics -->
+    <div class="stats">
+
+      <div class="stat-box">
+        <h3>248</h3>
+        <p>Total Patients</p>
+      </div>
+
+      <div class="stat-box">
+        <h3>35</h3>
+        <p>Clinical Trials</p>
+      </div>
+
+      <div class="stat-box">
+        <h3>102</h3>
+        <p>Eligible Patients</p>
+      </div>
+
+    </div>
+
+    <!-- Search -->
+    <div class="search-box">
+      <input type="text" placeholder="🔍 Search Patient" [(ngModel)]="searchText"
+      (keyup.enter)="searchPatient()">
+
+    </div>
+    <!-- Feature Cards -->
+    <div class="cards-container">
+
+      <a routerLink="/patient-records" class="card">
+
+        <h2>👥 Patient Records</h2>
+
+        <p>Manage Electronic Medical Records.</p>
+
+      </a>
+
+      <a routerLink="/clinical-trail" class="card">
+
+        <h2>🧪 Clinical Trial Matcher</h2>
+
+        <p>Search matching clinical trials.</p>
+
+      </a>
+
+      <a routerLink="/patient-eligibility" class="card">
+
+        <h2>📄 Patient Eligibility</h2>
+
+        <p>Generate eligibility letters.</p>
+
+      </a>
+
+    </div>
+
+    <!-- Quick Actions -->
+
+    <!-- Footer -->
+    <footer class="footer">
+
+      <p>© 2026 MedCare Hospital</p>
+
+      <p>Intelligent EMR & Clinical Trial Matcher</p>
+
+    </footer>
+
+  </div>
+
+</div>

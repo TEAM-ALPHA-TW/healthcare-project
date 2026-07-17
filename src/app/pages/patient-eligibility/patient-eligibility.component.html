@@ -1,0 +1,35 @@
+<div class="container">
+
+  <h1>Patient Eligibility</h1>
+
+  <label>Patient ID</label><br>
+  <input
+    type="text"
+    placeholder="Enter Patient ID"
+    [(ngModel)]="patientId">
+
+  <br><br>
+
+  <label>Clinical Trial</label><br>
+  <input
+    type="text"
+    placeholder="Enter Trial Name"
+    [(ngModel)]="trialName">
+
+  <br><br>
+
+  <button (click)="checkEligibility()">
+    Check Eligibility
+  </button>
+
+  <button routerLink="/eligibility-letter">
+    Generate Eligibility Letter
+  </button>
+
+  <br><br>
+
+  <button routerLink="/dashboard">
+    Back to Dashboard
+  </button>
+
+</div>
