@@ -1,21 +1,28 @@
 <div class="patient-container">
 
-  <div class="header">
-    <h1>👥 Patient Records</h1>
+ <div class="header">
 
-    <button class="add-btn" (click)="showForm = true">
-      +Add patient
-    </button>
+  <div>
+    <h1>👥 Patient Records</h1>
+    <p>Manage Electronic Medical Records</p>
   </div>
+
+  <button class="add-btn" (click)="showForm = true">
+    ➕ Add Patient
+  </button>
+
+</div>
 <div class="search-box">
+
   <input
     type="text"
-    placeholder="Search Patient by ID or Name"
+    placeholder="🔍 Search by Patient ID or Name"
     [(ngModel)]="searchText">
 
-  <button >
+  <button>
     🔍 Search
   </button>
+
 </div>
   
   <div class="patient-form" *ngIf="showForm">
@@ -76,11 +83,12 @@
 
     <thead>
       <tr>
-        <th>Patient ID</th>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Disease</th>
-        <th>Actions</th>
+       <th>Patient ID</th>
+<th>Name</th>
+<th>Age</th>
+<th>Disease</th>
+<th>Status</th>
+<th>Actions</th>
       </tr>
     </thead>
 
@@ -91,11 +99,25 @@
     <td>{{ p.age }}</td>
     <td>{{ p.disease }}</td>
 
-    <td>
-      <button class="view-btn" (click)="viewPatient(i)">View</button>
-      <button class="edit-btn" (click)="editPatient(i)">Edit</button>
-      <button class="delete-btn" (click)="deletepatient(i)">Delete</button>
-    </td>
+
+<td>
+  <span class="status active">
+    Active
+  </span>
+</td>
+   <td>
+  <button class="view-btn" (click)="viewPatient(i)">
+    👁 View
+  </button>
+
+  <button class="edit-btn" (click)="editPatient(i)">
+    ✏ Edit
+  </button>
+
+  <button class="delete-btn" (click)="deletepatient(i)">
+    🗑 Delete
+  </button>
+</td>
   </tr>
 </tbody>
 
@@ -107,4 +129,4 @@
     ⬅ Back to Dashboard
   </button>
 
-</div>c
+</div>

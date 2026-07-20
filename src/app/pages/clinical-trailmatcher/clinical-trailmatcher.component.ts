@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { max, min } from 'rxjs';
 
 @Component({
   selector: 'app-clinical-trailmatcher',
@@ -17,7 +16,7 @@ export class ClinicalTrailmatcherComponent {
       disease: 'Diabetes',
       title: 'Diabetes Research Trial',
       location: 'Hyderabad',
-      status: 'Open',
+      status: 'Recruiting',
       minAge: 18,
       maxAge: 60
     },
@@ -29,59 +28,52 @@ export class ClinicalTrailmatcherComponent {
       status: 'Recruiting',
       minAge: 25,
       maxAge: 65
-
     },
     {
       id: 'CT003',
       disease: 'Cancer',
       title: 'Cancer Immunotherapy',
       location: 'Chennai',
-      status: 'Open',
+      status: 'Recruiting',
       minAge: 35,
       maxAge: 70
     }
   ];
 
- get filteredTrials() {
-  return this.trials.filter(t =>
-    t.disease.toLowerCase().includes(this.searchDisease.toLowerCase()) &&
-    (
-      this.searchAge == null ||
-      (this.searchAge >= t.minAge && this.searchAge <= t.maxAge)
-    )
-  );
-}
- searchTrials() {
+  get filteredTrials() {
+    return this.trials.filter(trial =>
+      trial.disease.toLowerCase().includes(this.searchDisease.toLowerCase()) &&
+      (
+        this.searchAge == null ||
+        (this.searchAge >= trial.minAge && this.searchAge <= trial.maxAge)
+      )
+    );
+  }
 
-  if (this.searchDisease.trim() == '') {
+  searchTrials(): void {
 
-    alert("Please Enter Disease");
+    if (this.searchDisease.trim() === '') {
+      alert('Please enter a disease name.');
+      return;
+    }
 
-    return;
+    if (this.filteredTrials.length === 0) {
+      alert('No matching clinical trials found.');
+    } else {
+      alert(this.filteredTrials.length + ' trial(s) found.');
+    }
 
   }
 
-  if (this.filteredTrials.length === 0) {
-
-    alert("No Matching Trials Found");
-
-  } else {
-
-    alert(this.filteredTrials.length + " Trial(s) Found");
-
-  }
-
-}
-
-  matchTrial(trial: any) {
+  matchTrial(trial: any): void {
 
     alert(
-      'Matched Trial\n\n' +
-      'Trial ID: ' + trial.id +
-      '\nTitle: ' + trial.title +
-      '\nDisease: ' + trial.disease +
-      '\nLocation: ' + trial.location +
-      '\nStatus: ' + trial.status
+      "✅ Trial Matched Successfully!\n\n" +
+      "Trial ID: " + trial.id +
+      "\nTitle: " + trial.title +
+      "\nDisease: " + trial.disease +
+      "\nLocation: " + trial.location +
+      "\nStatus: " + trial.status
     );
 
   }

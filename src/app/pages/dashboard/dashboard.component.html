@@ -21,13 +21,24 @@
   <div class="main-content">
 
     <!-- Top Bar -->
-    <div class="top-bar">
+   <div class="top-header">
 
-      <h3>🏥 MedCare Hospital</h3>
+  <div>
+    <h2>🏥 MedCare Hospital</h2>
+    <p>Intelligent EMR & Clinical Trial Matcher</p>
+  </div>
 
-      <p>{{ today | date:'dd/MM/yyyy' }}</p>
-
+  <div class="header-right">
+    <div class="notification">
+      🔔 <span class="badge">3</span>
     </div>
+
+    <div class="date-box">
+      📅 {{ today | date:'dd/MM/yyyy' }}
+    </div>
+  </div>
+
+</div>
 
     <!-- Title -->
     <h1>Intelligent EMR & Clinical Trial Matcher</h1>
@@ -35,43 +46,62 @@
     <!-- Doctor Profile -->
     <div class="doctor-card">
 
-      <div class="doctor-img">
-        👨‍⚕️
-      </div>
+  <div class="doctor-img">
+    👨‍⚕️
+  </div>
 
-      <div class="doctor-details">
+  <div class="doctor-details">
 
-        <h2>Welcome Dr. {{ doctorName }}</h2>
+    <h2>Welcome Dr. {{ doctorName }}</h2>
 
-        <p>📧 {{ doctorEmail }}</p>
+    <p>📧 {{ doctorEmail }}</p>
 
-        <p>🩺 Cardiologist</p>
+    <p>🩺 Cardiologist</p>
 
-        <p class="online-status">🟢 Online</p>
+    <p>🏥 MedCare Hospital</p>
 
-      </div>
+    <p class="online-status">🟢 Available</p>
 
-    </div>
+  </div>
+
+  <div class="doctor-summary">
+
+    <h3>Today's Summary</h3>
+
+    <p>👥 Patients : 18</p>
+
+    <p>🧪 Trials : 5</p>
+
+    <p>📄 Reports : 12</p>
+
+  </div>
+
+</div>
 
     <!-- Statistics -->
     <div class="stats">
 
-      <div class="stat-box">
-        <h3>248</h3>
-        <p>Total Patients</p>
-      </div>
+  <div class="stat-box">
+    <h3>248</h3>
+    <p>👥 Total Patients</p>
+  </div>
 
-      <div class="stat-box">
-        <h3>35</h3>
-        <p>Clinical Trials</p>
-      </div>
+  <div class="stat-box">
+    <h3>35</h3>
+    <p>🧪 Clinical Trials</p>
+  </div>
 
-      <div class="stat-box">
-        <h3>102</h3>
-        <p>Eligible Patients</p>
-      </div>
+  <div class="stat-box">
+    <h3>102</h3>
+    <p>✅ Eligible Patients</p>
+  </div>
 
-    </div>
+  <div class="stat-box">
+    <h3>18</h3>
+    <p>📅 Appointments</p>
+  </div>
+
+</div>
 
     <!-- Search -->
     <div class="search-box">
