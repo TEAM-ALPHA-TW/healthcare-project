@@ -150,3 +150,7 @@ button:hover{
 }
 
 }
+caption{
+    position: absolute;
+    left: -9999px;
+}

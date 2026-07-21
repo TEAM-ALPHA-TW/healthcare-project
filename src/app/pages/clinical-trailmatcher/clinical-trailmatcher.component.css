@@ -172,3 +172,7 @@ tr:hover{
         padding:10px;
     }
 }
+caption{
+    position: absolute;
+    left: -9999px;
+}
