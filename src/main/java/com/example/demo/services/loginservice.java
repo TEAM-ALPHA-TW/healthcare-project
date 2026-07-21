@@ -10,14 +10,20 @@ import com.example.demo.repository.loginrepository;
 
 @Service
 public class loginservice {
-	@Autowired
-	loginrepository repo;
-	public String add1(login l) {
-		repo.save(l);
-		return "successfully added";
-	}
-	public List<login> getall2(){
-		return repo.findAll();
-	}
+
+    @Autowired
+    loginrepository repo;
+
+    // Login
+    public login login1(login l) {
+        return repo.findByEmailAndPassword(
+                l.getEmail(),
+                l.getPassword()
+        );
+    }
+
+    public List<login> getall2() {
+        return repo.findAll();
+    }
 
 }

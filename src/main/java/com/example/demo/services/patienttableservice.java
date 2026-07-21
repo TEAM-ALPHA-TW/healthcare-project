@@ -20,5 +20,33 @@ public class patienttableservice {
 	public List<patienttable> getall14(){
 		return repo.findAll();
 	}
+	public String delete14(Integer id) {
+
+        repo.deleteById(id);
+
+        return "deleted successfully";
+    }
+	public String update14(Integer id, patienttable pt) {
+
+	    patienttable patient = repo.findById(id).orElse(null);
+
+	    if (patient != null) {
+
+	        patient.setPatientId(pt.getPatientId());
+	        patient.setPatientName(pt.getPatientName());
+	        patient.setAge(pt.getAge());
+	        patient.setGender(pt.getGender());
+	        patient.setDisease(pt.getDisease());
+	        patient.setBloodGroup(pt.getBloodGroup());
+	        patient.setPhone(pt.getPhone());
+
+	        repo.save(patient);
+
+	        return "Updated Successfully";
+	    }
+
+	    return "Patient Not Found";
+	}
+
 
 }

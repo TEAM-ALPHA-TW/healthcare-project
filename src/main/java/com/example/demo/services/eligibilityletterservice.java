@@ -19,5 +19,21 @@ public class eligibilityletterservice {
 	public List<eligibilityletter> getall19(){
 		return repo.findAll();
 	}
+	public eligibilityletter getLetter(String patientId) {
+
+	    List<eligibilityletter> letters = repo.findAll();
+
+	    for (eligibilityletter e : letters) {
+
+	        if (e.getPatientId().equalsIgnoreCase(patientId)) {
+
+	            return e;
+
+	        }
+
+	    }
+
+	    return null;
+	}
 
 }

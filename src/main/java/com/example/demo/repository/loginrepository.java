@@ -8,4 +8,8 @@ import com.example.demo.models.login;
 @Repository
 public interface loginrepository extends JpaRepository<login, Integer> {
 
+    login findByEmailAndPassword(String email, String password);
+
 }
+
+
