@@ -1,0 +1,83 @@
+<div class="container">
+
+    <!-- Header -->
+
+    <div class="header">
+
+        <div>
+            <h1>📄 Patient Eligibility</h1>
+            <p>Check whether the patient is eligible for a clinical trial</p>
+        </div>
+
+    </div>
+
+    <!-- Eligibility Card -->
+
+    <div class="eligibility-card">
+
+        <div class="input-group">
+
+            <label>Patient ID</label>
+
+            <input
+                type="text"
+                placeholder="Enter Patient ID"
+                [(ngModel)]="patientId">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Clinical Trial</label>
+
+            <input
+                type="text"
+                placeholder="Enter Trial Name"
+                [(ngModel)]="trialName">
+
+        </div>
+
+        <div class="button-group">
+
+            <button class="check-btn"
+                (click)="checkEligibility()">
+
+                ✅ Check Eligibility
+
+            </button>
+
+            <button class="letter-btn"
+                routerLink="/eligibility-letter">
+
+                📄 Generate Eligibility Letter
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Result Card -->
+
+    <div class="result-card">
+
+        <h3>Eligibility Result</h3>
+
+        <p>
+            Enter the Patient ID and Trial Name, then click
+            <strong>Check Eligibility</strong>.
+        </p>
+
+    </div>
+
+    <br>
+
+    <button
+        class="back-btn"
+        routerLink="/dashboard">
+
+        ⬅ Back to Dashboard
+
+    </button>
+
+</div>

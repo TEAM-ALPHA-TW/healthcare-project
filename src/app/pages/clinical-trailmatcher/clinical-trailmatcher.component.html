@@ -1,0 +1,105 @@
+<div class="container">
+
+    <!-- Header -->
+
+    <div class="header">
+
+        <div>
+            <h1>🧪 Clinical Trial Matcher</h1>
+            <p>Find suitable clinical trials for patients</p>
+        </div>
+
+    </div>
+
+    <!-- Search Card -->
+
+    <div class="search-box">
+
+        <div class="input-group">
+
+            <label>Disease</label>
+
+            <input
+                type="text"
+                placeholder="Enter Disease"
+                [(ngModel)]="searchDisease">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Age</label>
+
+            <input
+                type="number"
+                placeholder="Enter Age"
+                [(ngModel)]="searchAge">
+
+        </div>
+
+        <button (click)="searchTrials()">
+            🔍 Search Trials
+        </button>
+
+    </div>
+
+    <!-- Results Table -->
+
+    <table>
+        <caption>Clincal Trail Search Results</caption>
+
+        <thead>
+
+            <tr>
+
+                <th>Trial ID</th>
+                <th>Trial Name</th>
+                <th>Disease</th>
+                <th>Location</th>
+                <th>Status</th>
+                <th>Match</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let trial of filteredTrials">
+
+                <td>{{ trial.id }}</td>
+
+                <td>{{ trial.title }}</td>
+
+                <td>{{ trial.disease }}</td>
+
+                <td>{{ trial.location }}</td>
+
+                <td>
+                    <span class="status">
+                        {{ trial.status }}
+                    </span>
+                </td>
+
+                <td>
+
+                    <button class="match-btn"
+                        (click)="matchTrial(trial)">
+                        ✅ Match
+                    </button>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+    <br>
+
+    <button class="back-btn" routerLink="/dashboard">
+        ⬅ Back to Dashboard
+    </button>
+
+</div>

@@ -1,0 +1,33 @@
+<div class="login-container">
+
+    <h1>Healthcare EMR & Clinical Trial Matcher</h1>
+
+    <h2>Doctor Login</h2>
+
+    <label>Doctor Name</label><br>
+    <input
+      type="text"
+      [(ngModel)]="doctorName"
+      placeholder="Enter Doctor Name">
+
+    <br><br>
+
+    <label>Email</label><br>
+    <input
+      type="email"
+      [(ngModel)]="email"
+      placeholder="Enter Email">
+
+    <br><br>
+
+    <label>Password</label><br>
+    <input
+      type="password"
+      [(ngModel)]="password"
+      placeholder="Enter Password">
+
+    <br><br>
+
+    <button (click)="login()">Login</button>
+
+</div>
