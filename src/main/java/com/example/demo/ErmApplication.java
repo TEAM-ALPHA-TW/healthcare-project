@@ -1,13 +1,12 @@
-package com.example.demo;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 @SpringBootApplication
-public class ErmApplication {
+public class MyApp extends SpringBootServletInitializer {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ErmApplication.class, args);
-	}
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(MyApp.class);
+    }
 
+    public static void main(String[] args) {
+        SpringApplication.run(MyApp.class, args);
+    }
 }
